@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado Personas</title>
+</head>
+<body onload="pintarTablaClientes();">
+    <div id="TablaClientes">
+		<h2>Tabla de Personas</h2>
+		<!-- Insertar aquí la tabla clientes -->
+	</div>
+
+<script>
+function pintarTablaClientes(){
+    let tabla = document.createElement("table");
+    let dniPersona = document.createElement("th");
+    let nombre = document.createElement("th");
+    let tlf = document.createElement("th");
+    let tipo = document.createElement("th");
+    let Correo = document.createElement("th");
+    let TarjetaContra = document.createElement("th");
+    let fila = document.createElement("tr");
+
+    dniPersona.textContent = "DNI";
+    nombre.textContent = "Nombre";
+    tipo.textContent = "Tipo";
+    Correo.textContent = "Correo-e";
+    tlf.textContent="Telefono";
+    TarjetaContra.textContent = "Tarjeta/Contraseña";
+
+    fila.appendChild(dniPersona);
+    fila.appendChild(nombre);
+    fila.appendChild(tlf);
+    fila.appendChild(Correo);
+    fila.appendChild(tipo);
+    fila.appendChild(TarjetaContra);
+
+    tabla.appendChild(fila);
+
+    recogerDatos(tabla);
+
+    tabla.setAttribute("border","2px");
+    let resultado = document.querySelector("#TablaClientes");
+    resultado.lastChild.remove();
+    resultado.appendChild(tabla);
+}
+
+function recogerDatos(tabla) {
+
+let lista = JSON.parse(getCookie('persona'));
+for (const fila of lista) {
+    let tr = document.createElement('tr');        
+    let tds = fila.split(',');
+
+    for (const td of tds) {
+        
+        let columna = document.createElement('td');
+        columna.textContent = td;
+        tr.appendChild(columna);
+
+
+    }
+
+    tabla.appendChild(tr);
+
+}
+}
+
+</script>
+<script type="text/javascript" src="js/cookies.js"></script>
+</body>
+
+</html>

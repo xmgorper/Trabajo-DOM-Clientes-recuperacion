@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+
+<almacen>
+
+<producto alias="love66">
+
+<id>1</id>
+
+<nombre>love66</nombre>
+
+<precio>7.5</precio>
+
+<tipo>Tabaco</tipo>
+
+<sabor>Arandanos</sabor>
+
+</producto>
+
+
+<producto alias="mr.Burns">
+
+<id>2</id>
+
+<nombre>Mr.Burns</nombre>
+
+<precio>5.5</precio>
+
+<tipo>Boquilla</tipo>
+
+<material>Plastico</material>
+
+</producto>
+
+
+<producto alias="greenRush">
+
+<id>3</id>
+
+<nombre>GreenRush</nombre>
+
+<precio>7.5</precio>
+
+<tipo>Tabaco</tipo>
+
+<sabor>Marihuana</sabor>
+
+</producto>
+
+</almacen>
